@@ -1,0 +1,651 @@
+/* ================================
+   RESETEO GLOBAL Y BASE
+================================== */
+/* Importar fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Work Sans';
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* me permite deslizar cuando hago clic en los links del menu */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #0d1117;
+  color: white;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1.5px, transparent 1.5px),
+    radial-gradient(white 0.8px, transparent 0.8px);
+  background-size: 100px 100px, 150px 150px, 80px 80px;
+  animation: moveStars 40s linear infinite;
+}
+
+@keyframes moveStars {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+
+  100% {
+    background-position: 100px 100px, 150px 150px, 80px 80px;
+  }
+}
+
+img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 4px 10px black;
+}
+
+/* ================================
+   ENCABEZADO / HEADER
+================================== */
+.esHeader {
+  background-color: #21262d;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  /* padding original un poco más grande para que se note la reducción */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.507);
+  transition: all 0.3s ease;
+}
+
+.esHeader.scroll {
+  padding: 7px 20px;
+  /* reduce el padding al hacer scroll */
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+  background-color: #21262d;
+  /* un poco más oscuro si querés */
+}
+
+.esHeader ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.esHeader nav ul li a {
+  font-size: 1rem;
+  color: white;
+  margin: 0 15px;
+  padding: 2px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.esHeader.scroll nav ul li a {
+  font-size: 100%;
+  /* reduce tamaño fuente al hacer scroll */
+}
+
+.esHeader nav ul li a:hover {
+  color: #58a6ff;
+}
+
+/* Logo tamaño original y reducido */
+.esHeader .logo img {
+  width: 80px;
+  /* tamaño original */
+  height: 80px;
+  transition: all 0.3s ease;
+}
+
+.esHeader.scroll .logo img {
+  width: 50px;
+  /* tamaño reducido */
+  height: 50px;
+}
+
+
+/* ================================
+   SECCIÓN INICIO / PRESENTACIÓN
+================================== */
+.inicios {
+  margin-top: 160px;
+  text-align: center;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fotoPropia {
+  width: 80%;
+  height: 60%;
+  border-radius: 50%;
+}
+
+/* ================================
+   SECCIONES GENERALES
+================================== */
+section {
+  background-color: #21262d;
+  color: white;
+  display: inline-block;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  margin-top: 30px;
+  z-index: 1;
+}
+
+section h1 {
+  margin-top: 15px;
+  font-size: 2rem;
+  white-space: nowrap;
+}
+
+section h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* ================================
+   HABILIDADES (Skills)
+================================== */
+.skills {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.skills .fila {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.skills .fila .col {
+  width: 30%;
+  padding: 0 20px;
+}
+
+.skills .skill>span {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.skills .skill .barra-skill {
+  height: 8px;
+  width: 80%;
+  background-color: #131517;
+  position: relative;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skills .skill .progreso {
+  background-color: #1cb698;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 8px;
+}
+
+.skills .skill .barra-skill span {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background-color: #1cb698;
+  border-radius: 50%;
+  line-height: 40px;
+  text-align: center;
+  top: -17px;
+  right: 0;
+  transform: translateX(50%);
+  font-size: 14px;
+}
+
+#skills .offset-anchor {
+  position: relative;
+  top: -150px;
+  /* desplaza hacia arriba */
+  height: 150px;
+  /* mantiene el espacio */
+  visibility: hidden;
+}
+
+
+.col h2 {
+  font-size: 1.5rem;
+  padding: 7%;
+}
+
+.skills h1 {
+  font-size: 2.2rem;
+}
+
+/* -------------------------------
+   HABILIDADES DURAS (Hard Skills)
+---------------------------------- */
+.skills .skill .javascript {
+  width: 0%;
+  animation: 2s javascript forwards;
+}
+
+@keyframes javascript {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 89%;
+  }
+}
+
+.skills .skill .c {
+  width: 0%;
+  animation: 2s c forwards;
+}
+
+@keyframes c {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 85%;
+  }
+}
+
+.skills .skill .my {
+  width: 0%;
+  animation: 2s my forwards;
+}
+
+@keyframes my {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 65%;
+  }
+}
+
+.skills .skill .cs {
+  width: 0%;
+  animation: 2s cs forwards;
+}
+
+@keyframes cs {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 45%;
+  }
+}
+
+.skills .skill .ht {
+  width: 0%;
+  animation: 2s ht forwards;
+}
+
+@keyframes ht {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 55%;
+  }
+}
+
+/* -------------------------------
+   HABILIDADES BLANDAS (Soft Skills)
+---------------------------------- */
+.skills .skill .team {
+  width: 0%;
+  animation: 2s team forwards;
+}
+
+@keyframes team {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 98%;
+  }
+}
+
+.skills .skill .resp {
+  width: 0%;
+  animation: 2s resp forwards;
+}
+
+@keyframes resp {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 85%;
+  }
+}
+
+.skills .skill .comp {
+  width: 0%;
+  animation: 2s comp forwards;
+}
+
+@keyframes comp {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 88%;
+  }
+}
+
+.skills .skill .imag {
+  width: 0%;
+  animation: 2s imag forwards;
+}
+
+@keyframes imag {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 55%;
+  }
+}
+
+.skills .skill .emp {
+  width: 0%;
+  animation: 2s emp forwards;
+}
+
+@keyframes emp {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 91%;
+  }
+}
+
+/* ================================
+   CONTACTO
+================================== */
+.contacto {
+  padding: 50px 20px;
+  background-color: #21262d;
+  color: #fff;
+}
+
+.contacto h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #00ffff;
+}
+
+.contenedor-contacto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.col {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.formulario input,
+.formulario textarea {
+  font-size: 1rem;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background: #1e1e1e;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.formulario button {
+  font-size: 1rem;
+  width: 100%;
+  padding: 12px;
+  background: #00ffff;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background-color: #00cccc;
+}
+
+.mapa img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info li {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.info i {
+  color: #00ffff;
+  margin-right: 10px;
+}
+
+/* ================================
+   PIE DE PÁGINA / FOOTER
+================================== */
+footer.footer {
+  background-color: #21262d;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+footer.footer .redes a {
+  color: #58a6ff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+footer.footer .redes a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   RESPONSIVE
+================================== */
+@media (max-width: 768px) {
+  .skills .fila {
+    flex-direction: column;
+  }
+
+  .skills .fila .col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .contacto .fila {
+    flex-direction: column;
+  }
+
+  .contacto .col {
+    width: 100%;
+  }
+
+  .esHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .esHeader ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .esHeader nav ul li a {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .inicios {
+    width: 90%;
+  }
+}
+
+/* El modal (oculto por defecto) */
+.modalDialog {
+  position: fixed;
+  font-family: Arial, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modalDialog.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalDialog:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalDialog>div {
+  width: 50%;
+  margin: 5% auto;
+  padding: 20px;
+  background: #2d2d2d;
+  border-radius: 30px;
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.modalDialog .close {
+  background: #ff3b3b;
+  color: white;
+  line-height: 25px;
+  position: absolute;
+  right: 10px;
+  text-align: center;
+  top: 10px;
+  width: 25px;
+  height: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.modalDialog .close:hover {
+  background: #c00;
+}
+
+.modal-trigger {
+ background-color: #21262d;
+  color: white;
+  display: inline-block;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  margin-top: 30px;
+  z-index: 1;
+}
+
+.modalDialog img.modal-img {
+  width: 100%;
+  height: 100%;
+  max-height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Scroll del modal CV */
+.modal-content-scrollable {
+  width: 90%;
+  max-width: 800px;
+  height: 80vh;
+  /* altura fija para que tenga scroll interno */
+  overflow-y: auto;
+  /* habilita scroll vertical si se necesita */
+  background: #2d2d2d;
+  border-radius: 30px;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-embed {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+.listaRef h2, li{
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.listaRef h2{
+  text-align: center;
+  padding-bottom: 20px;
+}
